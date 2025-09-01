@@ -1,7 +1,7 @@
 # 概述
 Markdown 是一种轻量级标记语言，使用纯文本格式语法。它是 GitHub 等主要代码仓库编写文档的默认语法。
 
-## weiki 样式生效格式
+# weiki 样式生效格式
 ```markdown
 内容
 { .class-name }
