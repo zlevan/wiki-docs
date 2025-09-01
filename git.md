@@ -2,7 +2,7 @@
 { .is-info }
 
 # 回退
-```git
+```js
 // 查看 commit 记录 拿到 hash
 git log
 
@@ -11,7 +11,7 @@ git reset <hash>
 ```
 
 # 查看全局配置 
-```git
+```js
 git config --global --list
 
 // 查看指定属性
@@ -19,7 +19,7 @@ git config --global user.name
 ```
 
 # 仓库地址配置
-```git
+```js
 // 添加远程仓库
 git remote add origin <地址>
 
@@ -31,7 +31,7 @@ git remote remove origin
 ```
 
 # 分支
-```git
+```js
 // 查看所有分支
 git branch -a
 
