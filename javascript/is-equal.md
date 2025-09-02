@@ -1,5 +1,4 @@
 
-
 # 使用 JSON.stringify()
 ```js
 const areObjectsEqual = (obj1, obj2) => {
@@ -19,27 +18,49 @@ const areObjectsEqual = (obj1, obj2) => {
 # 递归比较
 ```js
 
-const isObject = (item) => {
-  return (item && typeof item === 'object' && !Array.isArray(item));
-}
+const isEqual = (a: any, b: any) => {
+  // 处理基本类型和相同引用
+  if (a === b) return true
 
-const areObjectsEqual = (obj1, obj2) => {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  if (keys1.length !== keys2.length) {
-    return false;
+  // 处理NaN
+  if (Number.isNaN(a) && Number.isNaN(b)) return true
+
+  // 处理null和undefined
+  if (a == null || b == null) return a === b
+
+  // 检查类型是否一致
+  if (typeof a !== typeof b) return false
+
+  // 处理日期对象
+  if (a instanceof Date && b instanceof Date) {
+    return a.getTime() === b.getTime()
   }
-  for (let key of keys1) {
-    const val1 = obj1[key];
-    const val2 = obj2[key];
-    const areObjects = isObject(val1) && isObject(val2);
-    if (
-      areObjects && !areObjectsEqual(val1, val2) ||
-      !areObjects && val1 !== val2
-    ) {
-      return false;
+
+  // 处理正则表达式
+  if (a instanceof RegExp && b instanceof RegExp) {
+    return a.toString() === b.toString()
+  }
+
+  // 处理函数
+  if (typeof a === 'function' && typeof b === 'function') {
+    return a.toString() === b.toString()
+  }
+
+  // 处理数组和对象
+  if (typeof a === 'object' && typeof b === 'object') {
+    const keysA = Object.keys(a)
+    const keysB = Object.keys(b)
+
+    if (keysA.length !== keysB.length) return false
+
+    for (let key of keysA) {
+      if (!keysB.includes(key)) return false
+      if (!isEqual(a[key], b[key])) return false
     }
+    return true
   }
-  return true;
+
+  // 其他情况
+  return false
 }
 ```
