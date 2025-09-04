@@ -14,5 +14,6 @@
 
 # 自定义组件
 - [table *基于 `element-plus` 二次封装*](/vue/components/table)
+- [desc *描述列表*](/vue/components/desc)
 {.links-list}
  
