@@ -66,8 +66,9 @@ onMounted(() => {
 | clock          | InstanceType &lt;typeof THREE.Clock&gt;             | 时间方法                          |
 | cacheOptions   | Object                                              | 缓存配置项                        |
 | pmremGenerator | InstanceType &lt;typeof THREE.PMREMGenerator&gt;    | 纹理触发器                        |
+{ .dense }
 
-### Options
+# Options
 | 属性名           | 类型               | 可选值 | 默认值 | 说明                                        |
 | ---------------- | ------------------ | ------ | ------ | ------------------------------------------- |
 | container        | HTMLElement/String | -      | -      | 容器                                        |
@@ -85,24 +86,28 @@ onMounted(() => {
 | grid             | Object             | -      | -      | [网格](/three-scene#grid)                   |
 | axes             | Object             | -      | -      | [坐标](/three-scene#axes)                   |
 | cruise           | Object             | -      | -      | [巡航](/three-scene#cruise)                 |
+|                  |
+{ .dense }
 
-### Fog
+# Fog
 | 属性名  | 类型          | 可选值 | 默认值 | 说明         |
 | ------- | ------------- | ------ | ------ | ------------ |
 | visible | Boolean       | -      | false  | 可见         |
 | near    | Number        | -      | 100    | 雾化最近距离 |
 | far     | Number        | -      | 1000   | 雾化最远距离 |
 | color   | Number/String | -      | -      | 雾化颜色     |
+{ .dense }
 
-### Render
+# Render
 | 属性名                 | 类型    | 可选值 | 默认值 | 说明                                                              |
 | ---------------------- | ------- | ------ | ------ | ----------------------------------------------------------------- |
 | antialias              | Boolean | -      | true   | 是否开启反锯齿                                                    |
 | alpha                  | Boolean | -      | false  | 画布透明度缓冲区                                                  |
 | logarithmicDepthBuffer | Boolean | -      | true   | 设置对数深度缓存                                                  |
 | preserveDrawingBuffer  | Boolean | -      | false  | 是否保留缓冲区直到手动清除或覆盖，需要截图设置为 true，性能会下降 |
+{ .dense }
 
-### Controls
+# Controls
 | 属性名             | 类型    | 可选值 | 默认值   | 说明                                 |
 | ------------------ | ------- | ------ | -------- | ------------------------------------ |
 | visible            | Boolean | -      | false    | 可见                                 |
@@ -122,17 +127,18 @@ onMounted(() => {
 | maxTargetRadius    | Number  | -      | Infinity | 目标移动半径                         |
 | rotateSpeed        | Number  | -      | 1        | 旋转速度                             |
 | screenSpacePanning | Boolean | -      | true     | 空间内平移/垂直平面平移              |
+{ .dense }
 
 
-
-### AmbientLight
+# AmbientLight
 | 属性名    | 类型          | 可选值 | 默认值   | 说明       |
 | --------- | ------------- | ------ | -------- | ---------- |
 | visible   | Boolean       | -      | false    | 可见       |
 | color     | Number/String | -      | 0xffffff | 环境光颜色 |
-| intensity | Number        | -      | 1.5      | 光强度     |
+| intensity | Number        | -      | 1.5      | 光强度     | 3 |
+{ .dense }
 
-### DirectionalLight
+# DirectionalLight
 | 属性名    | 类型          | 可选值 | 默认值   | 说明             |
 | --------- | ------------- | ------ | -------- | ---------------- |
 | visible   | Boolean       | -      | false    | 可见             |
@@ -140,8 +146,9 @@ onMounted(() => {
 | light2    | boolean       | -      | true     | 第二个平行光开启 |
 | color     | Number/String | -      | 0xffffff | 平行光颜色       |
 | intensity | Number        | -      | 1.5      | 光强度           |
+{ .dense }
 
-### Camera
+# Camera
 | 属性名     | 类型    | 可选值 | 默认值           | 说明                     |
 | ---------- | ------- | ------ | ---------------- | ------------------------ |
 | helper     | Boolean | -      | false            | 辅助器                   |
@@ -150,8 +157,9 @@ onMounted(() => {
 | fov        | Number  | -      | 36               | 摄像机视锥体垂直视野角度 |
 | orthogonal | Boolean | -      | -                | 正交                     |
 | position   | Array   | -      | [-350, 510, 700] | 相机位置坐标             |
+{ .dense }
 
-### Grid
+# Grid
 | 属性名          | 类型          | 可选值 | 默认值   | 说明           |
 | --------------- | ------------- | ------ | -------- | -------------- |
 | visible         | Boolean       | -      | false    | 可见           |
@@ -164,14 +172,16 @@ onMounted(() => {
 | fork            | Boolean       | -      | false    | 网格交叉点     |
 | forkSize        | Number        | -      | 1.4      | 网格交叉点大小 |
 | forkColor       | Number/String | -      | 0xa1a1a1 | 网格交叉点颜色 |
+{ .dense }
 
-### Axes
+# Axes
 | 属性名  | 类型    | 可选值 | 默认值 | 说明       |
 | ------- | ------- | ------ | ------ | ---------- |
 | visible | Boolean | -      | false  | 可见       |
 | size    | Number  | -      | 50     | 坐标轴大小 |
+{ .dense }
 
-### Cruise
+# Cruise
 | 属性名         | 类型          | 可选值 | 默认值   | 说明                                          |
 | -------------- | ------------- | ------ | -------- | --------------------------------------------- |
 | visible        | Boolean       | -      | false    | 可见                                          |
@@ -199,10 +209,11 @@ onMounted(() => {
 | bloomIntensity | Number        | -      | 1        | 发光强度                                      |
 | textTip        | Boolean       | -      | true     | 文本提示（按键规则）                          |
 | cameraAutoMove | Boolean       | -      | true     | 相机自动移动                                  |
+{ .dense }
 
 
 
-### Methods
+# Methods
 | 方法名                          | 参数                            | 返回                    | 说明                                                         |
 | ------------------------------- | ------------------------------- | ----------------------- | ------------------------------------------------------------ |
 | debounce                        | -                               | -                       | 节流函数                                                     |
@@ -261,13 +272,14 @@ onMounted(() => {
 | stopAnimate                     | -                               | -                       | 停止动画（requestAnimationFrame）                            |
 | disposeObj                      | obj                             | -                       | 清除场景对象                                                 |
 | dispose                         | -                               | -                       | 场景销毁                                                     |
+{ .dense }
 
 
 
-
-### XYZ
+# XYZ
 | 属性名 | 类型   |
 | ------ | ------ |
 | x      | Number |
 | y      | Number |
 | z      | Number |
+{ .dense }
